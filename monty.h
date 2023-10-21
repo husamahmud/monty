@@ -9,8 +9,6 @@
 #include <ctype.h>
 #include <unistd.h>
 
-#define TRUE  (1==1)
-
 /**
  * struct stack_s - doubly linked list representation of a stack (or queue)
  * @n: integer
@@ -62,38 +60,26 @@ extern file_close f_close;
 
 /* stack operations */
 void push(stack_s **stack, unsigned int line_number);
-
 void pall(stack_s **stack, __attribute__((unused)) unsigned int line_number);
-
 void pint(stack_s **stack, unsigned int line_number);
-
 void pop(stack_s **stack, unsigned int line_number);
-
 void swap(stack_s **stack, unsigned int line_number);
 
 /* arithmetic operations */
 void add(stack_s **stack, unsigned int line_number);
-
 void sub(stack_s **stack, unsigned int line_number);
-
 void mul(stack_s **stack, unsigned int line_number);
-
 void _div(stack_s **stack, unsigned int line_number);
-
 void mod(stack_s **stack, unsigned int line_number);
 
 /* other operations */
 void nope(stack_s **stack, unsigned int line_number);
-
 void pchar(stack_s **stack, unsigned int line_number);
-
 void pstr(stack_s **stack, __attribute__((unused)) unsigned int line_number);
 
 /* utility functions */
 instruction_t instruction(char *line, unsigned int line_num, FILE *fd);
-
 void free_dlistint(stack_s *head);
-
 void free_stk(stack_s **head);
 
 #endif
