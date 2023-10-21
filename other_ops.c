@@ -6,7 +6,7 @@
  * @line_number: line number of the instruction
  * Return: None
  */
-void nope(stack_t **stack, unsigned int line_number)
+void nope(stack_s **stack, unsigned int line_number)
 {
 	(void) stack;
 	(void) line_number;
@@ -18,7 +18,7 @@ void nope(stack_t **stack, unsigned int line_number)
  * @line_number: line number of the instruction
  * Return: None
  */
-void pchar(stack_t **stack, unsigned int line_number)
+void pchar(stack_s **stack, unsigned int line_number)
 {
 	int c;
 
@@ -50,11 +50,11 @@ void pchar(stack_t **stack, unsigned int line_number)
  * @line_number: line number of the instruction
  * Return: None
  */
-void pstr(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+void pstr(stack_s **stack, __attribute__((unused)) unsigned int line_number)
 {
 	char buff[100];
 	int i = 0;
-	stack_t *curr = *stack;
+	stack_s *curr = *stack;
 
 	if (*stack == NULL)
 	{

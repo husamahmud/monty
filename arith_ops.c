@@ -6,7 +6,7 @@
  * @line_number: line number in the Monty file
  * Return: None
  */
-void add(stack_t **stack, unsigned int line_number)
+void add(stack_s **stack, unsigned int line_number)
 {
 	int sum;
 
@@ -30,7 +30,7 @@ void add(stack_t **stack, unsigned int line_number)
  * @line_number: line number in the Monty file
  * Return: None
  */
-void sub(stack_t **stack, unsigned int line_number)
+void sub(stack_s **stack, unsigned int line_number)
 {
 	int sum = 0;
 
@@ -49,18 +49,18 @@ void sub(stack_t **stack, unsigned int line_number)
 }
 
 /**
- * div - divides the second top element by the top element of the stack
+ * _div - _divides the second top element by the top element of the stack
  * @stack: pointer to the stack
  * @line_number: line number in the Monty file
  * Return: None
  */
-void div(stack_t **stack, unsigned int line_number)
+void _div(stack_s **stack, unsigned int line_number)
 {
 	int sum;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{
-		fprintf(stderr, "L%u: can't div, stack too short\n", line_number);
+		fprintf(stderr, "L%u: can't _div, stack too short\n", line_number);
 		free(f_close.line);
 		fclose(f_close.file);
 		free_stk(f_close.stack);
@@ -69,7 +69,7 @@ void div(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->n == 0)
 	{
-		fprintf(stderr, "L%u: division by zero\n", line_number);
+		fprintf(stderr, "L%u: _division by zero\n", line_number);
 		free(f_close.line);
 		fclose(f_close.file);
 		free_stk(f_close.stack);
@@ -87,7 +87,7 @@ void div(stack_t **stack, unsigned int line_number)
  * @line_number: line number in the Monty file
  * Return: None
  */
-void mul(stack_t **stack, unsigned int line_number)
+void mul(stack_s **stack, unsigned int line_number)
 {
 	int sum;
 
@@ -111,7 +111,7 @@ void mul(stack_t **stack, unsigned int line_number)
  * @line_number: line number in the Monty file
  * Return: None
  */
-void mod(stack_t **stack, unsigned int line_number)
+void mod(stack_s **stack, unsigned int line_number)
 {
 	int sum;
 
@@ -126,7 +126,7 @@ void mod(stack_t **stack, unsigned int line_number)
 
 	if ((*stack)->n == 0)
 	{
-		fprintf(stderr, "L%u: division by zero\n", line_number);
+		fprintf(stderr, "L%u: _division by zero\n", line_number);
 		free(f_close.line);
 		fclose(f_close.file);
 		free_stk(f_close.stack);

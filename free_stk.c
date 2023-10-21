@@ -5,9 +5,9 @@
  * @head: pointer to the head of the doubly linked list
  * Return: void
  */
-void free_dlistint(stack_t *head)
+void free_dlistint(stack_s *head)
 {
-	stack_t *temp = head;
+	stack_s *temp = head;
 
 	while (temp)
 	{
@@ -22,9 +22,9 @@ void free_dlistint(stack_t *head)
  * @head: double pointer to the head of the stack
  * Return: void
  */
-void free_stk(stack_t **head)
+void free_stk(stack_s **head)
 {
-	stack_t *temp = NULL;
+	stack_s *temp = NULL;
 
 	if (head == NULL)
 		return;

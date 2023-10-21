@@ -1,6 +1,6 @@
 #include "monty.h"
 
-file_close f_close = {NULL};
+file_close f_close = {.line = NULL};
 
 
 /**

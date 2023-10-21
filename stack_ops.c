@@ -6,9 +6,9 @@
  * @line_number: line number in the Monty file
  * Return: None
  */
-void push(stack_t **stack, unsigned int line_number)
+void push(stack_s **stack, unsigned int line_number)
 {
-	stack_t *new_node = malloc(sizeof(stack_t));
+	stack_s *new_node = malloc(sizeof(stack_s));
 
 	f_close.stack = &stk_top;
 	if (!new_node)
@@ -39,9 +39,9 @@ void push(stack_t **stack, unsigned int line_number)
  * @line_number: line number in the Monty file
  * Return: None
  */
-void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
+void pall(stack_s **stack, __attribute__((unused)) unsigned int line_number)
 {
-	stack_t *curr = *stack;
+	stack_s *curr = *stack;
 
 	if (curr == NULL)
 		return;
@@ -59,7 +59,7 @@ void pall(stack_t **stack, __attribute__((unused)) unsigned int line_number)
  * @line_number: line number in the Monty file
  * Return: None.
  */
-void pint(stack_t **stack, unsigned int line_number)
+void pint(stack_s **stack, unsigned int line_number)
 {
 	if (*stack == NULL)
 	{
@@ -79,9 +79,9 @@ void pint(stack_t **stack, unsigned int line_number)
  * @line_number: line number in the Monty file
  * Return: None
  */
-void pop(stack_t **stack, unsigned int line_number)
+void pop(stack_s **stack, unsigned int line_number)
 {
-	stack_t *temp = *stack;
+	stack_s *temp = *stack;
 
 	if (*stack == NULL)
 	{
@@ -105,10 +105,10 @@ void pop(stack_t **stack, unsigned int line_number)
  * @line_number: line number in the Monty file
  * Return: None
  */
-void swap(stack_t **stack, unsigned int line_number)
+void swap(stack_s **stack, unsigned int line_number)
 {
-	stack_t *first = *stack;
-	stack_t *sec = (*stack)->next;
+	stack_s *first = *stack;
+	stack_s *sec = (*stack)->next;
 
 	if (*stack == NULL || (*stack)->next == NULL)
 	{

@@ -1,6 +1,6 @@
 #include "monty.h"
 
-stack_t *stk_top = NULL;
+stack_s *stk_top = NULL;
 
 /**
  * instruction - parses and executes the instruction
@@ -11,7 +11,7 @@ stack_t *stk_top = NULL;
  */
 instruction_t instruction(char *line, unsigned int line_num, FILE *fd)
 {
-	bool valid;
+	int valid;
 	char *arg = NULL;
 	int n = 0, i;
 	char *line_c = line;
@@ -52,10 +52,10 @@ instruction_t instruction(char *line, unsigned int line_num, FILE *fd)
 		{
 			instrct.f = sub;
 			sub(&stk_top, line_num);
-		} else if (strcmp(instrct.opcode, "div") == 0)
+		} else if (strcmp(instrct.opcode, "_div") == 0)
 		{
-			instrct.f = div;
-			div(&stk_top, line_num);
+			instrct.f = _div;
+			_div(&stk_top, line_num);
 		} else if (strcmp(instrct.opcode, "mul") == 0)
 		{
 			instrct.f = mul;
@@ -79,7 +79,7 @@ instruction_t instruction(char *line, unsigned int line_num, FILE *fd)
 		} else
 		{
 			fprintf(stderr, "L%u: unknown instruction %s\n", line_num,
-				instrct.opcode);
+			        instrct.opcode);
 			free(instrct.opcode);
 			fclose(fd);
 			exit(EXIT_FAILURE);
